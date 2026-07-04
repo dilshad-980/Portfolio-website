@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dilshad-portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome for icons (LinkedIn, email, phone, location) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <script>
+    function sendMail(event) {
+      event.preventDefault();
+
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let message = document.getElementById("message").value;
+
+      let subject = "Portfolio Contact Form";
+
+      let body = `Name: ${name}
+
+Email: ${email}
+
+Message:
+${message}`;
+
+      window.location.href = `mailto:dilshadalam14450@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+  </script>
+  <body>
+    <header id="home">
+      <nav id="header-nav">
+        <a href="#bgn">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <hr />
+    </header>
+    <br />
+    <div>
+      <section id="bgn">
+        <h1>Md Dilshad Alam</h1>
+        <p>
+          Full-Stack Developer & Computer Engineering Student passionate about
+          crafting modern web experiences..
+        </p>
+        <div id="cv-button">
+          <a href="#home" target="_self" id="cv" border="1"> View CV </a>
+        </div>
+      </section>
+      <br />
+      <br />
+      <hr />
+      <section id="about">
+        <h4>About</h4>
+        <h1>Who I Am</h1>
+        <p>
+          I'm <strong>Mohd Dilshad Alam</strong>, a Computer Engineering student
+          at <strong> Jamia Millia Islamia</strong>, one of India's top central
+          universities, consistently recognized among the country's leading
+          institutions in the NIRF rankings. I'm passionate about web
+          development and enjoy building responsive, user-friendly websites. My
+          journey started with HTML and CSS, and I've gradually expanded my
+          skills to JavaScript, PHP, and SQL by working on real-world projects.
+          I believe in continuous learning, solving practical problems, and
+          growing into a skilled Full-Stack Developer.
+        </p>
+      </section>
+    </div>
+    <br />
+    <br />
+    <hr />
+    <div class="timeline" id="journey">
+      <h4>Education & Experience</h4>
+      <div class="timeline-item">
+        <div class="dot"></div>
+        <div class="content">
+          <h3>Diploma in Computer Engineering</h3>
+          <p>Jamia Millia Islamia, New Delhi</p>
+          <span>2024 - 2027</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="dot"></div>
+        <div class="content">
+          <h3>Matriculation (10th)</h3>
+          <p>Daksh Public School, Aurangabad, Bihar</p>
+          <span>Completed 2024</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="dot"></div>
+        <div class="content">
+          <h3>Internship</h3>
+          <h4>IIIS Indraprastha</h4>
+          <p>
+            Four Week Industrial Training – Software Development Indraprastha
+            <strong>Institute of Information Sciences (IIIS)</strong>, New
+            Delhi, India
+          </p>
+          <span>2026 – July 2026 </span>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <hr />
+    <div id="skills">
+      <h2>Skill and Strengths</h2>
+      <section id="languages">
+        <h4>Languages</h4>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>PHP</li>
+          <li>SQL</li>
+          <li>Java</li>
+          <li>C and C++</li>
+        </ul>
+      </section>
+      <section id="Concepts">
+        <h4>Concepts</h4>
+        <ul>
+          <li>Responsive Web Design</li>
+          <li>Front-End Development</li>
+          <li>Back-End Development</li>
+          <li>Database Management</li>
+          <li>Version Control (Git)</li>
+          <li><strong>Object-Oriented Programming</strong></li>
+          <li><strong>Data Structures (intermediate)</strong></li>
+        </ul>
+      </section>
+      <section id="softskills">
+        <h4>Soft Skills</h4>
+        <ul>
+          <li>Problem-Solving</li>
+          <li>Team Collaboration</li>
+          <li>Adaptability</li>
+          <li>Time Management</li>
+          <li>Continuous Learning</li>
+        </ul>
+      </section>
+    </div>
+    <br />
+    <br />
+    <hr />
+    <div id="projects">
+      <h4>Work</h4>
+      <h2>Projects</h2>
+      <div class="project-item">
+        <h3>Portfolio Website</h3>
+        <p>
+          A personal portfolio website showcasing my skills, projects, and
+          experience. Built with HTML, CSS, and JavaScript.
+        </p>
+        <a href="#home" target="_self">View Project</a>
+      </div>
+      <div class="project-item">
+        <h3>Blog Platform</h3>
+        <p>
+          A simple blog platform where users can create, edit, and delete posts.
+          Built with PHP and MySQL.
+        </p>
+        <a href="#home" target="_self">View Project</a>
+      </div>
+    </div>
+    <br />
+    <br />
+    <hr />
+    <div id="contact">
+      <h4>Contact</h4>
+      <h2>Let's Get In Touch!</h2>
+      <section id="contactbox">
+        <form onsubmit="sendMail(event)">
+          <div class="input-box">
+            <label for="name">Name</label><br />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="your name.."
+            />
+          </div>
+          <div class="input-box">
+            <label for="email">Email</label><br />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="abc@xyz.com"
+            />
+          </div>
+          <div class="input-box">
+            <label for="message">Message</label><br />
+            <textarea
+              id="message"
+              name="message"
+              required
+              placeholder="your message.."
+            ></textarea>
+          </div>
+          <button type="submit">Send Message</button>
+        </form>
+        <br />
+        <br />
+      </section>
+      <section id="contactnav">
+        <nav>
+          <a href="mailto:dilshadalam14450@gmail.com" id="email"
+            ><i class="fa-solid fa-envelope"></i> dilshadalam14450@gmail.com</a
+          >
+          <br />
+          <a href="tel:+91 7870096541" id="phone"
+            ><i class="fa-solid fa-phone"></i> +91 7870096541</a
+          >
+          <br />
+          <a
+            href="https://www.linkedin.com/in/md-dilshad-alam-744a6a351/"
+            target="_blank"
+            id="linkedin"
+            ><i class="fa-brands fa-linkedin"></i> LinkedIn</a
+          >
+          <br />
+          <a
+            href="https://maps.app.goo.gl/zhhx8cptf7DNW9V57"
+            target="_blank"
+            id="location"
+            ><i class="fa-solid fa-location-dot"></i> New Delhi, India</a
+          >
+        </nav>
+      </section>
+    </div>
+    <br />
+    <br />
+    <br />
+    <hr />
+    <footer>
+      <p>&copy; 2026 Md Dilshad Alam. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

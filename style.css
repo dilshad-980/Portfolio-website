@@ -1,0 +1,629 @@
+/* ==========================================================================
+   Md Dilshad Alam — Portfolio Stylesheet
+   Theme: Modern Dark
+   Font: Poppins (Google Fonts)
+   ========================================================================== */
+
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* ==========================================================================
+   1. CSS VARIABLES (Design Tokens)
+   Change colors here and the whole site updates.
+   ========================================================================== */
+:root {
+  --bg: #0f172a; /* main background */
+  --card: #1e293b; /* card / surface background */
+  --card-hover: #24314a; /* slightly lighter card on hover */
+  --primary: #3b82f6; /* primary blue */
+  --accent: #06b6d4; /* cyan accent */
+  --text: #ffffff; /* main text */
+  --text-muted: #94a3b8; /* secondary/muted text */
+  --border: #334155; /* subtle borders */
+
+  --radius: 14px;
+  --transition: 0.3s ease;
+  --max-width: 1100px;
+}
+
+/* ==========================================================================
+   2. RESET & BASE STYLES
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* smooth scrolling for anchor links */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+/* Generic section width control */
+section,
+#skills,
+#projects,
+#contact,
+.timeline {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+/* ==========================================================================
+   3. NAVBAR (Sticky)
+   ========================================================================== */
+header#home {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+#header-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 20px 16px;
+}
+
+#header-nav a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  position: relative;
+  padding: 6px 2px;
+  transition: color var(--transition);
+}
+
+/* Underline hover effect */
+#header-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  transition: width var(--transition);
+}
+
+#header-nav a:hover {
+  color: var(--primary);
+}
+
+#header-nav a:hover::after {
+  width: 100%;
+}
+
+header#home hr {
+  margin: 0 auto;
+  opacity: 0.5;
+}
+
+/* ==========================================================================
+   4. HERO SECTION
+   ========================================================================== */
+#bgn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 70vh;
+  gap: 18px;
+  padding-top: 100px;
+}
+
+#bgn h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  background: linear-gradient(90deg, var(--text), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#bgn p {
+  max-width: 600px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* CV Button */
+#cv-button {
+  margin-top: 12px;
+}
+
+#cv {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: var(--text);
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.35);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+#cv:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(6, 182, 212, 0.45);
+}
+
+/* ==========================================================================
+   5. ABOUT SECTION (Card style)
+   ========================================================================== */
+#about {
+  text-align: center;
+}
+
+#about h4 {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+
+#about h1 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+#about p {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  color: var(--text-muted);
+  text-align: left;
+  font-size: 0.98rem;
+}
+
+#about p strong {
+  color: var(--text);
+}
+
+/* ==========================================================================
+   6. EDUCATION & EXPERIENCE TIMELINE
+   ========================================================================== */
+.timeline h4 {
+  text-align: center;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  margin-bottom: 40px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 32px;
+  border-left: 2px solid var(--border);
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Blue dot marker */
+.timeline-item .dot {
+  position: absolute;
+  left: -7px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+.timeline-item .content {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  transition:
+    transform var(--transition),
+    border-color var(--transition);
+}
+
+.timeline-item .content:hover {
+  transform: translateX(6px);
+  border-color: var(--primary);
+}
+
+.timeline-item .content h3 {
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.timeline-item .content h4 {
+  color: var(--accent);
+  font-size: 0.85rem;
+  margin: 4px 0;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.timeline-item .content p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.timeline-item .content span {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   7. SKILLS SECTION (3-card grid)
+   ========================================================================== */
+#skills h2 {
+  text-align: center;
+  font-size: 1.9rem;
+  margin-bottom: 36px;
+}
+
+/* Grid wraps the three skill sections */
+#skills {
+  display: grid;
+  gap: 24px;
+}
+
+#skills h2 {
+  grid-column: 1 / -1;
+}
+
+#languages,
+#Concepts,
+#softskills {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+#languages:hover,
+#Concepts:hover,
+#softskills:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  border-color: var(--primary);
+}
+
+#languages h4,
+#Concepts h4,
+#softskills h4 {
+  color: var(--accent);
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+#languages ul li,
+#Concepts ul li,
+#softskills ul li {
+  padding: 6px 0;
+  color: var(--text-muted);
+  border-bottom: 1px dashed var(--border);
+  font-size: 0.92rem;
+}
+
+#languages ul li:last-child,
+#Concepts ul li:last-child,
+#softskills ul li:last-child {
+  border-bottom: none;
+}
+
+#languages ul li strong,
+#Concepts ul li strong,
+#softskills ul li strong {
+  color: var(--text);
+}
+
+/* Responsive 3-column grid on larger screens */
+@media (min-width: 768px) {
+  #skills {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ==========================================================================
+   8. PROJECTS SECTION
+   ========================================================================== */
+#projects h4 {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+}
+
+#projects h2 {
+  font-size: 1.9rem;
+  margin-bottom: 32px;
+}
+
+/* Responsive project grid */
+.project-item {
+  display: grid;
+  grid-template-columns: 1fr; /* stacked container handles multiple items via gap */
+}
+
+#projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+#projects h4,
+#projects h2 {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 700px) {
+  #projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.project-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 34px rgba(6, 182, 212, 0.25);
+}
+
+.project-item h3 {
+  font-size: 1.15rem;
+}
+
+.project-item p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  flex-grow: 1;
+}
+
+.project-item a {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+.project-item a:hover {
+  background: var(--primary);
+  color: var(--text);
+}
+
+/* ==========================================================================
+   9. CONTACT SECTION (Two columns)
+   ========================================================================== */
+#contact h4 {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+}
+
+#contact h2 {
+  font-size: 1.9rem;
+  margin-bottom: 32px;
+}
+
+#contact {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+#contact h4,
+#contact h2 {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 768px) {
+  #contact {
+    grid-template-columns: 1.2fr 1fr; /* left: form, right: info */
+  }
+}
+
+/* --- Contact form --- */
+#contactbox form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-box label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.input-box input,
+.input-box textarea {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.input-box textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.input-box input:focus,
+.input-box textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.input-box input::placeholder,
+.input-box textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+#contactbox button[type="submit"] {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: var(--text);
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+#contactbox button[type="submit"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(6, 182, 212, 0.4);
+}
+
+/* --- Contact info (right column) --- */
+#contactnav {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  height: fit-content;
+}
+
+#contactnav nav {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Scope by parent to avoid clashing with the duplicate #email id on the form input */
+#contactnav a {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  transition:
+    color var(--transition),
+    padding-left var(--transition);
+}
+
+#contactnav a:hover {
+  color: var(--accent);
+  padding-left: 6px;
+}
+
+/* Remove the stray <br> spacing artifacts inside the nav since flex gap handles it */
+#contactnav br {
+  display: none;
+}
+
+/* ==========================================================================
+   10. FOOTER
+   ========================================================================== */
+footer {
+  text-align: center;
+  padding: 28px 16px;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   11. RESPONSIVE TWEAKS
+   ========================================================================== */
+@media (max-width: 480px) {
+  #header-nav {
+    gap: 20px;
+  }
+
+  section,
+  #skills,
+  #projects,
+  #contact,
+  .timeline {
+    padding: 40px 18px;
+  }
+
+  #bgn {
+    min-height: 60vh;
+    padding-top: 80px;
+  }
+}
