@@ -5,32 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>dilshad-portfolio</title>
     <link rel="stylesheet" href="style.css" />
-    <!-- Font Awesome for icons (LinkedIn, email, phone, location) -->
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
   </head>
-  <script>
-    function sendMail(event) {
-      event.preventDefault();
-
-      let name = document.getElementById("name").value;
-      let email = document.getElementById("email").value;
-      let message = document.getElementById("message").value;
-
-      let subject = "Portfolio Contact Form";
-
-      let body = `Name: ${name}
-
-Email: ${email}
-
-Message:
-${message}`;
-
-      window.location.href = `mailto:dilshadalam14450@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    }
-  </script>
   <body>
     <header id="home">
       <nav id="header-nav">
@@ -177,7 +157,6 @@ ${message}`;
     <br />
     <hr />
     <div id="contact">
-      <h4>Contact</h4>
       <h2>Let's Get In Touch!</h2>
       <section id="contactbox">
         <form onsubmit="sendMail(event)">
